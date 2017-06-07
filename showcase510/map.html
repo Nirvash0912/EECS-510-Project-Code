@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<style>
+	.state{
+		fill: none;
+		stroke: #a9a9a9;
+		stroke-width: 1;
+	}
+	.state:hover{
+		fill-opacity:0.5;
+	}
+	#tooltip {   
+		position: absolute;           
+		text-align: center;
+		padding: 20px;             
+		margin: 10px;
+		font: 12px sans-serif;        
+		background: lightsteelblue;   
+		border: 1px;      
+		border-radius: 2px;           
+		pointer-events: none;         
+	}
+	#tooltip h4{
+		margin:0;
+		font-size:14px;
+	}
+	#tooltip{
+		background:rgba(0,0,0,0.9);
+		border:1px solid grey;
+		border-radius:5px;
+		font-size:12px;
+		width:auto;
+		padding:4px;
+		color:white;
+		opacity:0;
+	}
+	#tooltip table{
+		table-layout:fixed;
+	}
+	#tooltip tr td{
+		padding:0;
+		margin:0;
+	}
+	#tooltip tr td:nth-child(1){
+		width:50px;
+	}
+	#tooltip tr td:nth-child(2){
+		text-align:center;
+	}
+</style>
+<body>
+<nav>
+<ul class="nav nav-pills">
+	<li class="nav-item">
+		<a class="nav-link" href="index.html">Home</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="time.html">Time-Analysis</a>
+	</li>
+	<li class="nav-item dropdown">
+		<a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Geo-Analysis</a>
+		<div class="dropdown-menu">
+			<a class="dropdown-item" href="map.html?type=overall">Overall</a>
+			<a class="dropdown-item" href="map.html?type=monthly&month=1">Jan</a>
+    		<a class="dropdown-item" href="map.html?type=monthly&month=2">Feb</a>
+    		<a class="dropdown-item" href="map.html?type=monthly&month=3">Mar</a>
+    		<a class="dropdown-item" href="map.html?type=monthly&month=4">Apr</a>
+    		<a class="dropdown-item" href="map.html?type=monthly&month=5">May</a>
+    		<a class="dropdown-item" href="map.html?type=monthly&month=6">Jun</a>
+    		<a class="dropdown-item" href="map.html?type=monthly&month=7">Jul</a>
+    		<a class="dropdown-item" href="map.html?type=monthly&month=8">Aug</a>
+    		<a class="dropdown-item" href="map.html?type=monthly&month=9">Sep</a>
+    		<a class="dropdown-item" href="map.html?type=monthly&month=10">Oct</a>
+    		<a class="dropdown-item" href="map.html?type=monthly&month=11">Nov</a>
+    		<a class="dropdown-item" href="map.html?type=monthly&month=12">Dec</a>
+    	</div>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="senti.html">Sentiment-Analysis</a>
+	</li>
+</ul>
+</nav>
+
+
+<div class="container">
+	<div class="row" style="text-align: center;">
+		<h1>Distribution of Tweets with Geo-data</h1>
+	</div>
+	<div id="map-type" class="row"></div>
+	<p>Visualization of Geo-data. Red color indicates higher number of Tweets. Green value indicates lower number of Tweets. The count here is normalized by population of corresponding state.</p>
+	<div id="tooltip"></div><!-- div to hold tooltip. -->
+	<svg width="960" height="600" id="statesvg"></svg> <!-- svg to hold the map. -->
+
+</div>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="http://d3js.org/d3.v4.min.js"></script>
+<script src="uStates.js"></script> <!-- creates uStates. -->
+<script src="map.js"></script> <!-- creates uStates. -->
+</body>

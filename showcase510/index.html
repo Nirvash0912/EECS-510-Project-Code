@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<style>
+	.state{
+		fill: none;
+		stroke: #a9a9a9;
+		stroke-width: 1;
+	}
+	.state:hover{
+		fill-opacity:0.5;
+	}
+	#tooltip {   
+		position: absolute;           
+		text-align: center;
+		padding: 20px;             
+		margin: 10px;
+		font: 12px sans-serif;        
+		background: lightsteelblue;   
+		border: 1px;      
+		border-radius: 2px;           
+		pointer-events: none;         
+	}
+	#tooltip h4{
+		margin:0;
+		font-size:14px;
+	}
+	#tooltip{
+		background:rgba(0,0,0,0.9);
+		border:1px solid grey;
+		border-radius:5px;
+		font-size:12px;
+		width:auto;
+		padding:4px;
+		color:white;
+		opacity:0;
+	}
+	#tooltip table{
+		table-layout:fixed;
+	}
+	#tooltip tr td{
+		padding:0;
+		margin:0;
+	}
+	#tooltip tr td:nth-child(1){
+		width:50px;
+	}
+	#tooltip tr td:nth-child(2){
+		text-align:center;
+	}
+</style>
+<body>
+
+<nav>
+<ul class="nav nav-pills">
+	<li class="nav-item">
+		<a class="nav-link active" href="#">Home</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="time.html">Time-Analysis</a>
+	</li>
+	<li class="nav-item dropdown">
+		<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="overall.html" role="button" aria-haspopup="true" aria-expanded="false">Geo-Analysis</a>
+		<div class="dropdown-menu">
+			<a class="dropdown-item" href="map.html?type=overall">Overall</a>
+			<a class="dropdown-item" href="map.html?type=monthly&month=1">Jan</a>
+    		<a class="dropdown-item" href="map.html?type=monthly&month=2">Feb</a>
+    		<a class="dropdown-item" href="map.html?type=monthly&month=3">Mar</a>
+    		<a class="dropdown-item" href="map.html?type=monthly&month=4">Apr</a>
+    		<a class="dropdown-item" href="map.html?type=monthly&month=5">May</a>
+    		<a class="dropdown-item" href="map.html?type=monthly&month=6">Jun</a>
+    		<a class="dropdown-item" href="map.html?type=monthly&month=7">Jul</a>
+    		<a class="dropdown-item" href="map.html?type=monthly&month=8">Aug</a>
+    		<a class="dropdown-item" href="map.html?type=monthly&month=9">Sep</a>
+    		<a class="dropdown-item" href="map.html?type=monthly&month=10">Oct</a>
+    		<a class="dropdown-item" href="map.html?type=monthly&month=11">Nov</a>
+    		<a class="dropdown-item" href="map.html?type=monthly&month=12">Dec</a>
+    	</div>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="senti.html">Sentiment-Analysis</a>
+	</li>
+</ul>
+</nav>
+
+<div class="container">
+	<h1 style="text-align: center">Project Showcase</h1>
+	<p style="text-align: center">Shixin Luo (Developer), Xinzuo Wang, Yingda Hu</p>
+	
+	<div id="accordion" role="tablist" aria-multiselectable="true" style="margin: 20px">
+		<div class="card">
+			<div class="card-header" role="tab" id="headingOne">
+				<h5 class="mb-0">
+				<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          			Description
+        		</a>
+      			</h5>
+    		</div>
+
+			<div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+      			<div class="card-block">
+        			For this project, we will be collecting all tweets relevant to the flu that were sent in the year of 2016-2017. Using this tweet data, we would like to accomplish three tasks: data visualization, prediction of the next time and location of a flu breakout, and attempt find correlations between the severity of an individual’s flu symptoms to their everyday lifestyle. 
+      			</div>
+    		</div>
+  		</div>
+
+		<div class="card">
+    		<div class="card-header" role="tab" id="headingTwo">
+      			<h5 class="mb-0">
+        		<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          			Tools Used
+        		</a>
+      			</h5>
+    		</div>
+    		<div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+      			<div class="card-block">
+        			Old tweets crawler: 
+        			<a href="https://github.com/Jefferson-Henrique/GetOldTweets-python">https://github.com/Jefferson-Henrique/GetOldTweets-python </a></br>
+        			Carmen: <a href="https://github.com/mdredze/carmen-python">https://github.com/mdredze/carmen-python</a></br>
+        			d3: <a href="https://d3js.org">https://d3js.org</a></br>
+      			</div>
+    		</div>
+  		</div>
+  		<!-- <div class="card">
+    		<div class="card-header" role="tab" id="headingThree">
+      			<h5 class="mb-0">
+        		<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          			Reserved
+        		</a>
+      			</h5>
+    		</div>
+    		<div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+      			<div class="card-block">
+        			Reserved
+      			</div>
+    		</div>
+  		</div> -->
+	</div>
+
+	<div class="row row-centered">
+		<div class="col-md-4 card">
+			<img class="card-img-top" src="./img/bar.png" width="318" height="180" alt="time analysis">
+			<div class="card-block">
+				<h4 class="card-title">Time-Analysis</h4>
+					<p class="card-text">Showing time distribution of tweets.</p>
+					<a href="time.html" class="btn btn-primary">Go to time-analysis</a>
+			</div>
+		</div>
+		<div class="col-md-4 card">
+			<img class="card-img-top" src="./img/map.png" width="318" height="180" alt="geo analysis">
+			<div class="card-block">
+				<h4 class="card-title">Geo-Analysis</h4>
+					<p class="card-text">Showing location distribution of tweets.</p>
+					<a href="map.html?type=overall" class="btn btn-primary">Go to geo-analysis</a>
+			</div>
+		</div>
+		<div class="col-md-4 card">
+			<img class="card-img-top" src="./img/pie.png" width="318" height="180" alt="reserverd">
+			<div class="card-block">
+				<h4 class="card-title">Sentiment-Analysis</h4>
+					<p class="card-text">Showing sentiment analysis results.</p>
+					<a href="senti.html" class="btn btn-primary">Go to sentiment-analysis</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</body>
